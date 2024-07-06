@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head}}
+  </head>
+  <body>
+    {{> header-bar }}
+
+    <div id="root" class="container"></div>
+  </body>
+
+  <script>
+    const button = document.createElement('button');
+    button.innerText = 'Hello 👋';
+    button.classList.add('btn', 'btn-primary');
+
+    button.addEventListener('click', () => {
+      alert('Tu as cliqué sur Hello 👋 !');
+    });
+
+    const Counter = (initialValue) => {
+      const button = document.createElement('button');
+      button.innerText = Number(initialValue) || 0;
+      button.classList.add('btn', 'btn-primary');
+
+      const onClick = () => {
+        const previousValue = Number(button.innerText);
+        button.innerText = previousValue + 1;
+      };
+
+      button.addEventListener('click', onClick);
+      return button;
+    };
+
+    const root = document.querySelector('#root');
+    root.appendChild(button);
+    root.appendChild(Counter(0));
+    root.appendChild(Counter('Test string'));
+    root.appendChild(Counter(100));
+  </script>
+</html>

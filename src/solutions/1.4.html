@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head}}
+  </head>
+  <body>
+    {{> header-bar }}
+
+    <div id="root" class="container"></div>
+  </body>
+
+  <script>
+    const button = document.createElement('button');
+    button.innerText = 'Hello 👋';
+    button.classList.add('btn', 'btn-primary');
+
+    button.addEventListener('click', () => {
+      alert('Tu as cliqué sur Hello 👋 !');
+    });
+
+    const Counter = (initialValue) => {
+      const button = document.createElement('button');
+      button.innerText = Number(initialValue) || 0;
+      button.classList.add('btn', 'btn-primary');
+
+      const onClick = () => {
+        const previousValue = Number(button.innerText);
+        button.innerText = previousValue + 1;
+      };
+
+      button.addEventListener('click', onClick);
+      return button;
+    };
+
+    const fruits = ['banana', 'apple', 'strawberry', 'test'];
+    const fruitsListUl = document.createElement('ul');
+    fruitsListUl.classList.add('list-disc', 'list-inside');
+
+    for (const fruit of fruits) {
+      const fruitLi = document.createElement('li');
+      fruitLi.innerText = fruit;
+      fruitsListUl.appendChild(fruitLi);
+    }
+
+    const root = document.querySelector('#root');
+    root.appendChild(button);
+    root.appendChild(Counter(0));
+    root.appendChild(Counter('Test string'));
+    root.appendChild(Counter(100));
+    root.appendChild(fruitsListUl);
+  </script>
+</html>

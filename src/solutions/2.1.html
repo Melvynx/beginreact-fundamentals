@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head}}
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+  </head>
+  <body>
+    {{> header-bar }}
+
+    <div id="root" class="container"></div>
+  </body>
+
+  <script>
+    const helloButton = React.createElement(
+      'button',
+      {
+        className: 'btn btn-primary',
+        onClick: () => {
+          alert('Tu as cliqué sur Hello !');
+        },
+      },
+      'Start'
+    );
+
+    const main = React.createElement('div', null, helloButton);
+
+    const container = document.querySelector('#root');
+    const root = ReactDOM.createRoot(container);
+    root.render(main);
+  </script>
+</html>

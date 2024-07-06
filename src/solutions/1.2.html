@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> head}}
+  </head>
+  <body>
+    {{> header-bar }}
+
+    <div id="root" class="container"></div>
+  </body>
+
+  <script>
+    const button = document.createElement('button');
+    button.classList.add('btn', 'btn-primary');
+    button.innerText = 'Hello 👋';
+
+    button.addEventListener('click', () => {
+      alert('Tu as cliqué sur Hello 👋 !');
+    });
+
+    const root = document.querySelector('#root');
+    root.appendChild(button);
+  </script>
+</html>
