@@ -6,7 +6,7 @@ sans React.
 
 ## Pré-requis
 
-- [JavaScript à connaître pour commencer React](https://codelynx.dev/posts/javascript-known-to-start-react)
+- //2do [JavaScript à connaître pour commencer React](https://codelynx.dev/posts/javascript-known-to-start-react)
 - Installer le React DevTools ([chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/))
 
 ## Systems

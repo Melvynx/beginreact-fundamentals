@@ -1,25 +1,46 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    {{> head}}
-  </head>
-  <body class="">
-    {{> header-bar }}
-
-    <div class="flex flex-col gap-4 container">
-      <button class="btn btn-primary" onclick="calculate()">Submit</button>
-      <div id="result"></div>
-    </div>
-  </body>
-
-  <script>
+    <head>
+        {{> head}}
+    </head>
+    <body class="">
+        {{> header-bar }}
+        <div class="flex flex-col gap-4 container">
+            <input
+                type="text"
+                id="base"
+                placeholder="Base ?"
+                class="input input-bordered"
+            >
+            <input
+                type="text"
+                id="height"
+                placeholder="Hauteur ?"
+                class="input input-bordered"
+            >
+            <button class="btn btn-primary" onclick="calculate()">Submit</button>
+            <div id="result"></div>
+        </div>
+    </body>
+    <script>
     const triangleAir = (base, height) => (base * height) / 2;
 
     const calculate = () => {
       // 🦁 Vient calculer l'air pour un triangle de base 5 et de hauteur 10.
+      
+      const base = Number(document.querySelector('#base').value);
+      const height = Number(document.querySelector('#height').value);
+      
+      console.log({ base, height });
+      
+      if (!height || !base) {
+        alert('The data filled is incorrect');
+        return;
+      }
+      
+      const result = triangleAir(base, height);
       // 🦁 Affichez le résultat dans la div "result".
+      document.getElementById('result').innerHTML = `L'aire du triangle est de ${result}`;
     };
-  </script>
-
-  <script></script>
+    </script>
 </html>
